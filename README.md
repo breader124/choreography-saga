@@ -22,7 +22,10 @@ mvn -f ./warehouse-service/pom.xml spring-boot:run -Dspring-boot.run.profiles=LO
 Requests:
 - add an item: 
 ```
-curl -X POST -d '{"name": "Test item name", "quantity": 10}' localhost:8081/items
+curl -X POST \
+-H "Content-Type: application/json" \
+-d '{"name": "Test item name", "quantity": 10}' \
+localhost:8081/items
 ```
 - create an order for an item:
 ```
